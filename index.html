@@ -29,15 +29,6 @@
     <audio id="audio-3" src="sounds/Caaaaaaarl 2.aac"></audio>
     <audio id="audio-4" src="sounds/Erghhhh.mp4"></audio>
 
-  <script>
-    function playSound() {
-      var audio = document.getElementById(`audio-${this.dataset.key}`);
-      audio.currentTime = 0;
-      audio.play();
-    }
-
-    const buttons = Array.from(document.querySelectorAll(".button"));
-    buttons.forEach(button => button.addEventListener('click', playSound));
-  </script>
+  <script src="scripts.js"></script>
   </body>
 </html>
