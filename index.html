@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Carl Smith Soundboard</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>The Carl Smith Soundboard</h1>
+    </div>
+    <div class="buttons">
+      <div data-key="1" class="button">
+        <button>Aragog</button>
+      </div>
+      <div data-key="2" class="button">
+        <button>Bastard</button>
+      </div>
+      <div data-key="3" class="button">
+        <button>Caaaaarl</button>
+      </div>
+      <div data-key="4" class="button">
+        <button>Ergh</button>
+      </div>
+    </div>
+
+    <audio id="audio-1" src="sounds/Aragog.aac"></audio>
+    <audio id="audio-2" src="sounds/Bastard.aac"></audio>
+    <audio id="audio-3" src="sounds/Caaaaaaarl 2.aac"></audio>
+    <audio id="audio-4" src="sounds/Erghhhh.mp4"></audio>
+
+  <script>
+    function playSound() {
+      var audio = document.getElementById(`audio-${this.dataset.key}`);
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+    const buttons = Array.from(document.querySelectorAll(".button"));
+    buttons.forEach(button => button.addEventListener('click', playSound));
+  </script>
+  </body>
+</html>
